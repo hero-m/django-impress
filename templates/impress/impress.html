@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block js %}
+	<script type="text/javascript" src="{% static 'js/util.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/impress_canvas.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/impress.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/channels.js' %}"></script>
+	<script type="text/javascript">
+		var image_data = {{ image_data|safe }};
+		document.onready = function () {
+			window.sample_img = new Impress(image_data, 'canvas');
+			var action = document.getElementById('action');
+			action.onclick = function () {
+				window.sample_img.exclude_channel('r');
+			}
+		}
+		
+	</script>
+{% endblock %}
+
+
+{% block content %}
+	<canvas id="canvas"></canvas>
+	<button id="action">Action</button>
+{% endblock %}

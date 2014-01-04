@@ -1,13 +1,13 @@
 {% load static %}
-{% get_static_prefix as STATIC_URL %}
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Insert title here</title>
-		<link rel="stylesheet" href="{{ STATIC_URL }}bootstrap/css/bootstrap.css">
-		<script type="text/javascript" src="{{ STATIC_URL }}bootstrap/js/bootstrap.js"></script>
-		<script type="text/javascript" src="{{ STATIC_URL }}jquery/jquery-2.0.3.js"></script>
+		<title>Impress - Django</title>
+		<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
+		<script type="text/javascript" src="{% static 'jquery/jquery-2.0.3.js' %}"></script>
+		<script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
+		{% block js %}{% endblock %}
 	</head>
 	<body>
 		{% block content %}

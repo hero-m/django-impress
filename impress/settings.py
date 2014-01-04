@@ -21,10 +21,11 @@ TEMPLATE_DIRS = [
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
-STATIC_URL = '/assets/'
+STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'assets')
+    os.path.join(BASE_DIR, 'assets'),
+    os.path.join(BASE_DIR, 'lib')
 ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, '../uploads')

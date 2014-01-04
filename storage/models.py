@@ -7,6 +7,8 @@ class ImageData(models.Model):
     saved = models.TextField("Saved data", null=True, blank=True)
     active = models.TextField("Active data", null=True, blank=True)
     luminance = models.TextField("Active luminance data", null=True, blank=True)
+    width = models.IntegerField("Image width", editable=False, default=0)
+    height = models.IntegerField("Image height", editable=False, default=0)
 
     def __str__(self):
         return self.name

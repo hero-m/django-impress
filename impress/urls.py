@@ -8,7 +8,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
 
     url(r'^$', 'storage.views.imagelist', name='imagelist'),
-
+    url(r'^impress/(?P<image_id>\d+)/$', 'impress.views.impress', name='impress'),
     # Examples:
     # url(r'^$', 'impress.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
